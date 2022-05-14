@@ -58,24 +58,24 @@ router.post('/', (req, res) => {
   });
 });
 
-// // //  Update User
-// router.put('/:id', (req, res) => {
-//   const { usuario, password, correo } = req.body;
-//   const { id } = req.params;
-//   const query = `
-//     SET @ID_USUARIO = ?;
-//     SET @USUARIO = ?;
-//     SET @CONTRASEÑA = ?;
-//     SET @CORREO= ?;
-//     CALL userAddOrEdit(@ID_USUARIO, @USUARIO, @CONTRASEÑA, @CORREO);
-//   `;
-//   mysqlConnection.query(query, [id, usuario, password, correo], (err, rows, fields) => {
-//     if(!err) {
-//       res.json({status: 'User Updated'});
-//     } else {
-//       console.log(err);
-//     }
-//   });
-// });
+//  Update Admin
+router.put('/:id', (req, res) => {
+  const {  nombre, telefono, id_usuario } = req.body;
+  const { id } = req.params;
+  const query = `
+    SET @ID_ADMIN = ?;
+    SET @NOMBRE = ?;
+    SET @TELEFONO = ?;
+    SET @ID_USUARIO = ?;
+    CALL adminAddOrEdit(@ID_ADMIN, @NOMBRE, @TELEFONO, @ID_USUARIO);
+  `;
+  mysqlConnection.query(query, [id, nombre, telefono, id_usuario], (err, rows, fields) => {
+    if(!err) {
+      res.json({status: 'Admin Updated'});
+    } else {
+      console.log(err);
+    }
+  });
+});
 
 module.exports = router;
