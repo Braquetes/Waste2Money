@@ -28,22 +28,23 @@ mysqlConnection.query(sqlcommand,[id], (err, rows, fields) => {
 });
 
 // //POST CLIENTE
-// router.post('/', (req, res) =>{
-// const {nombre,telefono,direccion} = req.body
+router.post('/', (req, res) =>{
+const {nombre,telefono,direccion} = req.body
 // var sqlcommand = INSERT INTO TB_CLIENTE(NOMBRE,TELEFONO,DIRECCION) VALUES '${nombre}', '${telefono}', '${direccion}';
-// mysqlConnection.query(sqlcommand, (err, rows, fields) => {
-//     if(err) throw err;
-//     else {
-//     sqlcommand = INSERT INTO TB_SCORE VALUES 0;
-//     mysqlConnection.query(sqlcommand,(err,rows,fields)=>{
-//         if(err) throw err;
-//         else{
-//         res.json({status: 'Cliente Insertado'});
-//         }
-//     })
-//     }
-// });
-// });
+var sqlcommand = `INSERT INTO TB_CLIENTE(NOMBRE,TELEFONO,DIRECCION) VALUES '${nombre}', '${telefono}', '${direccion}'`;
+mysqlConnection.query(sqlcommand, (err, rows, fields) => {
+    if(err) throw err;
+    else {
+    sqlcommand = `INSERT INTO TB_SCORE VALUES 0`;
+    mysqlConnection.query(sqlcommand,(err,rows,fields)=>{
+        if(err) throw err;
+        else{
+        res.json({status: 'Cliente Insertado'});
+        }
+    })
+    }
+});
+});
 
 // //UPDATE CLIENTE
 // router.put('/:id', (req,res) =>{
