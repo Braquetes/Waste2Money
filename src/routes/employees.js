@@ -40,7 +40,9 @@ router.delete('/:id', (req, res) => {
 
 // INSERT An Employee
 router.post('/', (req, res) => {
+  console.log( "  ===>")
   const {id, name, salary} = req.body;
+  // id must be 0 to create new row
   console.log(id, name, salary);
   const query = `
     SET @id = ?;
