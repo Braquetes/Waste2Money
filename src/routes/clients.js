@@ -27,50 +27,50 @@ mysqlConnection.query(sqlcommand,[id], (err, rows, fields) => {
 });
 });
 
-//POST CLIENTE
-router.post('/', (req, res) =>{
-const {nombre,telefono,direccion} = req.body
-var sqlcommand = INSERT INTO TB_CLIENTE(NOMBRE,TELEFONO,DIRECCION) VALUES '${nombre}', '${telefono}', '${direccion}';
-mysqlConnection.query(sqlcommand, (err, rows, fields) => {
-    if(err) throw err;
-    else {
-    sqlcommand = INSERT INTO TB_SCORE VALUES 0;
-    mysqlConnection.query(sqlcommand,(err,rows,fields)=>{
-        if(err) throw err;
-        else{
-        res.json({status: 'Cliente Insertado'});
-        }
-    })
-    }
-});
-});
+// //POST CLIENTE
+// router.post('/', (req, res) =>{
+// const {nombre,telefono,direccion} = req.body
+// var sqlcommand = INSERT INTO TB_CLIENTE(NOMBRE,TELEFONO,DIRECCION) VALUES '${nombre}', '${telefono}', '${direccion}';
+// mysqlConnection.query(sqlcommand, (err, rows, fields) => {
+//     if(err) throw err;
+//     else {
+//     sqlcommand = INSERT INTO TB_SCORE VALUES 0;
+//     mysqlConnection.query(sqlcommand,(err,rows,fields)=>{
+//         if(err) throw err;
+//         else{
+//         res.json({status: 'Cliente Insertado'});
+//         }
+//     })
+//     }
+// });
+// });
 
-//UPDATE CLIENTE
-router.put('/:id', (req,res) =>{
-const {id} = req.params.id
+// //UPDATE CLIENTE
+// router.put('/:id', (req,res) =>{
+// const {id} = req.params.id
 
-const {nombre,telefono,direccion} = req.body
-var sqlcommand = UPDATE TB_CLIENTE SET NOMBRE = '${nombre}', TELEFONO = '${telefono}', DIRECCION = '${direccion}' WHERE ID_CLIENTE = ${id} ;
-mysqlConnection.query(sqlcommand, (err, rows, fields) => {
-    if(err) throw err;
-    else {
-    res.json({status: 'Cliente Modificado'});
-    }
-});
-});
+// const {nombre,telefono,direccion} = req.body
+// var sqlcommand = UPDATE TB_CLIENTE SET NOMBRE = '${nombre}', TELEFONO = '${telefono}', DIRECCION = '${direccion}' WHERE ID_CLIENTE = ${id} ;
+// mysqlConnection.query(sqlcommand, (err, rows, fields) => {
+//     if(err) throw err;
+//     else {
+//     res.json({status: 'Cliente Modificado'});
+//     }
+// });
+// });
 
-//DELETE CLIENTE
-router.delete('/:id',(req,res) =>{
-const {id} = req.params.id
+// //DELETE CLIENTE
+// router.delete('/:id',(req,res) =>{
+// const {id} = req.params.id
 
-var sqlcommand = DELETE FROM TB_CLIENTE WHERE ID_CLIENTE = '${id}'
-mysqlConnection.query(sqlcommand, (err, rows, fields) => {
-    if(err) throw err;
-    else {
-    res.json({status: 'Cliente Agregado'});
-    }
-});
+// var sqlcommand = DELETE FROM TB_CLIENTE WHERE ID_CLIENTE = '${id}'
+// mysqlConnection.query(sqlcommand, (err, rows, fields) => {
+//     if(err) throw err;
+//     else {
+//     res.json({status: 'Cliente Agregado'});
+//     }
+// });
 
-});
+// });
 
   module.exports = router;

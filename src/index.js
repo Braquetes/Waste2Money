@@ -13,6 +13,8 @@ app.use(express.json());
 app.use("/users", require('./routes/users'));
 app.use("/admins", require('./routes/admins'));
 
+app.use("/clients", require('./routes/clients'));
+
 
 
 // Starting the server
