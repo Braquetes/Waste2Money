@@ -16,18 +16,18 @@ router.get('/', (req, res) => {
 
   
 // //GET ONE SCORE 
-//   router.get('/Score/:id', (req, res) => {
+  router.get('/:id', (req, res) => {
   
-//     const {id} = req.params.id
+    const {id} = req.params.id
   
-//     var sqlcommand = 'SELECT * FROM TB_SCORE WHERE ID_SCORE = ?';
-//     mysqlConnection.query(sqlcommand,[id], (err, rows, fields) => {
-//       if(err) throw err;
-//       else {
-//         res.json(rows);
-//       }
-//     });
-//   });
+    var sqlcommand = 'SELECT * FROM TB_SCORE WHERE ID_SCORE = ?';
+    mysqlConnection.query(sqlcommand,[id], (err, rows, fields) => {
+      if(err) throw err;
+      else {
+        res.json(rows);
+      }
+    });
+  });
   
 //   //PUT SCORE  
 //   router.put('/Score/:id', (req,res) => {
