@@ -3,7 +3,7 @@ const router = express.Router();
 
 const mysqlConnection  = require('../database.js');
 
-// GET all Users
+// GET all Admins
 router.get('/', (req, res) => {
   mysqlConnection.query('SELECT * FROM TB_ADMIN', (err, rows, fields) => {
     if(!err) {
@@ -14,17 +14,17 @@ router.get('/', (req, res) => {
   });  
 });
 
-//GET An User
-// router.get('/:id', (req, res) => {
-//   const { id } = req.params; 
-//   mysqlConnection.query('SELECT * FROM TB_USER WHERE ID_USUARIO = ?', [id], (err, rows, fields) => {
-//     if (!err) {
-//       res.json(rows[0]);
-//     } else {
-//       console.log(err);
-//     }
-//   });
-// });
+//GET An Admin
+router.get('/:id', (req, res) => {
+  const { id } = req.params; 
+  mysqlConnection.query('SELECT * FROM TB_ADMIN WHERE ID_ADMIN = ?', [id], (err, rows, fields) => {
+    if (!err) {
+      res.json(rows[0]);
+    } else {
+      console.log(err);
+    }
+  });
+});
 
 // // // DELETE An User
 // router.delete('/:id', (req, res) => {
