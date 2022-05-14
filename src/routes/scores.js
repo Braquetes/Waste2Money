@@ -48,17 +48,17 @@ router.get('/', (req, res) => {
   })
   
 //   //DELETE SCORE
-//   router.delete('/Score/:id',(req,res) =>{
-//     const {id} = req.params.id
+  router.delete('/:id',(req,res) =>{
+    const { id } = req.params
   
-//     var sqlcommand = DELETE FROM TB_SCORE WHERE ID_SCORE = '${id}'
-//     mysqlConnection.query(sqlcommand, (err, rows, fields) => {
-//       if(err) throw err;
-//       else {
-//         res.json({status: 'SCORE Eliminado'});
-//       }
-//     });
+    var sqlcommand = `DELETE FROM TB_SCORE WHERE ID_SCORE = ${id}`
+    mysqlConnection.query(sqlcommand, (err, rows, fields) => {
+      if(err) throw err;
+      else {
+        res.json({status: 'SCORE Eliminado'});
+      }
+    });
   
-//   });
+  });
 
 module.exports = router;
