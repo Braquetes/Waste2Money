@@ -33,11 +33,11 @@ router.get('/', (req, res) => {
 //   //PUT SCORE  
   router.put('/:id', (req,res) => {
   
-    const {id} = req.params.id
+    const { id } = req.params
   
     let {puntuacion} = req.body
   
-    var sqlcommand = `UPDATE TB_CLIENTE SET PUNTUACION  = ${puntuacion} WHERE ID_CLIENTE = ${id}` ;
+    var sqlcommand = `UPDATE TB_SCORE SET PUNTUACION  = ${puntuacion} WHERE ID_SCORE = ${id}` ;
   
     mysqlConnection.query(sqlcommand, (err, rows, fields) => {
       if(err) throw err;
