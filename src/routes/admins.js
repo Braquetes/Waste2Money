@@ -59,6 +59,7 @@ router.post('/', (req, res) => {
 });
 
 //  Update Admin
+// This route is not working correctly !!!!
 router.put('/:id', (req, res) => {
   const {  nombre, telefono, id_usuario } = req.body;
   const { id } = req.params;
