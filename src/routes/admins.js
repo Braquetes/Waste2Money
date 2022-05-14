@@ -26,17 +26,17 @@ router.get('/:id', (req, res) => {
   });
 });
 
-// // // DELETE An User
-// router.delete('/:id', (req, res) => {
-//   const { id } = req.params;
-//   mysqlConnection.query('DELETE FROM TB_USER WHERE ID_USUARIO = ?', [id], (err, rows, fields) => {
-//     if(!err) {
-//       res.json({status: 'User Deleted'});
-//     } else {
-//       console.log(err);
-//     }
-//   });
-// });
+//  DELETE An Admin 
+router.delete('/:id', (req, res) => {
+  const { id } = req.params;
+  mysqlConnection.query('DELETE FROM TB_ADMIN WHERE ID_ADMIN = ?', [id], (err, rows, fields) => {
+    if(!err) {
+      res.json({status: 'Admin Deleted'});
+    } else {
+      console.log(err);
+    }
+  });
+});
 
 // // // INSERT An User
 // router.post('/', (req, res) => {
