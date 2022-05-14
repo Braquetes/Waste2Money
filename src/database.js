@@ -4,7 +4,7 @@ const mysqlConnection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password',
-  database: 'company',
+  database: 'WASTE2MONEYDB',
   multipleStatements: true
 });
 
