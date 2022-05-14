@@ -1,0 +1,59 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top heros">
+    <div class="container d-flex align-items-center">
+
+        <h1 class="logo me-auto"><a>DÄZABI</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li><a [routerLink]="['/main']">Incio</a></li>
+                <li><a [routerLink]="['/ayuda']">Ayuda</a></li>
+                <li><a class="active">Historial</a></li>
+                <li><a [routerLink]="['/perfil']">Mi perfil</a></li>
+                <a class="btn btn-salir"><i class="fas fa-sign-out-alt"></i></a>
+            </ul>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+<div class="container-fluid pad" align="center">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-md-6 col-sm-3">
+                <div class="row">
+                    <h1>Historial de Recompensas</h1>
+                    <div align="center">
+                        <br>
+                        <div class="card" style="width: 18rem;">
+                            <img src="https://cazaofertas.com.mx/wp-content/uploads/2021/01/Burger-cuponera-130121-00.jpg"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Promoción en Burger King</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-3">
+                <div class="row">
+                    <h1>Historial de Intercambios</h1>
+                    <div align="center">
+                        <br>
+                        <div class="card" style="width: 20rem;">
+                            <div class="card-body">
+                                <p class="card-text">Intercambio de: <strong>Colillas de cigarro</strong></p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Fecha: <strong>10/02/2022</strong></li>
+                                <li class="list-group-item">Ubicación: <strong>Playa del </strong></li>
+                                <li class="list-group-item">Puntos ganados: <strong>25</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top heros">
+    <div class="container d-flex align-items-center">
+
+        <h1 class="logo me-auto"><a>DÄZABI</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li><a class="active">Incio</a></li>
+                <li><a [routerLink]="['/ayuda']">Ayuda</a></li>
+                <li><a [routerLink]="['/historial']">Historial</a></li>
+                <li><a [routerLink]="['/perfil']">Mi perfil</a></li>
+                <a class="btn btn-salir"><i class="fas fa-sign-out-alt"></i></a>
+            </ul>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+<div class="section-title pad">
+    <h2>Bienvenido</h2>
+    <p>Rodolfo Braquetes</p>
+</div>
+<main id="main">
+
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts section-bg">
+        <div class="container">
+
+            <div class="row counters">
+
+                <div class="col-lg-3 col-6 text-center">
+                    <p>Puntos disponibles</p>
+                    <span>390</span>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <p>Colillas</p>
+                    <span>15000</span>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <p>Puntos acumulados</p>
+                    <span>500</span>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center">
+                    <p>Recompensas</p>
+                    <span>2</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section><!-- End Counts Section -->
+
+
+
+    <!-- ======= Popular Courses Section ======= -->
+    <section id="popular-courses" class="courses">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Recompensas</h2>
+                <p>Recompensas populares</p>
+            </div>
+
+            <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="course-item">
+                        <img src="assets/main/img/course-1.jpg" class="img-fluid" alt="...">
+                        <div class="course-content">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Web Development</h4>
+                                <p class="price">$169</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Course Item-->
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                    <div class="course-item">
+                        <img src="assets/main/img/course-2.jpg" class="img-fluid" alt="...">
+                        <div class="course-content">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Marketing</h4>
+                                <p class="price">$250</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Course Item-->
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                    <div class="course-item">
+                        <img src="assets/main/img/course-3.jpg" class="img-fluid" alt="...">
+                        <div class="course-content">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Content</h4>
+                                <p class="price">$180</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Course Item-->
+
+            </div>
+
+        </div>
+    </section><!-- End Popular Courses Section -->
+
+
+
+</main><!-- End #main -->

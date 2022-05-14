@@ -1,11 +1,38 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AyudaComponent } from './client/ayuda/ayuda.component';
+import { HistorialComponent } from './client/historial/historial.component';
+import { MainComponent } from './client/main/main.component';
+import { PerfilComponent } from './client/perfil/perfil.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'registro',
+    component: RegistroComponent
+  },{
+    path: 'perfil',
+    component: PerfilComponent
+  },{
+    path: 'ayuda',
+    component: AyudaComponent
+  },{
+    path: 'historial',
+    component: HistorialComponent
+  },
+  {
+    path: 'main',
+    component: MainComponent
   },
   {
     path: '',

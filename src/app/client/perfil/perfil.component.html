@@ -1,0 +1,72 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top heros">
+    <div class="container d-flex align-items-center">
+
+        <h1 class="logo me-auto"><a>DÄZABI</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li><a [routerLink]="['/main']">Incio</a></li>
+                <li><a [routerLink]="['/ayuda']">Ayuda</a></li>
+                <li><a [routerLink]="['/historial']">Historial</a></li>
+                <li><a class="active">Mi perfil</a></li>
+                <a class="btn btn-salir"><i class="fas fa-sign-out-alt"></i></a>
+            </ul>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+<div class="container-fluid pad" align="center">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-3">
+                <h1>Mi perfil</h1>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Rodolfo Braquetes</h5>
+                        <p class="card-text">@Braquetes</p>
+                    </div>
+                    <img src="https://avatars.githubusercontent.com/u/67239474?s=400&u=37d07093d009a8ee9c33fb8a0cbe8f44c8df0f26&v=4"
+                        class="card-img-top" alt="...">
+                    <br>
+                    <p class="card-text">Estudiante compremetido con el medio ambiente</p>
+                    <button class="btn btn-success mx-auto">Actualizar foto de perfil <i
+                            class="fas fa-camera"></i></button>
+                </div>
+            </div>
+            <div class="col-9">
+                <h1>Editar mi perfil</h1><br><br>
+                <form class="col-6">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
