@@ -1,5 +1,5 @@
 Waste2Money
-![banner-waste2money](CloudTaxers._png)
+![banner-waste2money](CloudTaxers_.png)
 
 #### Autores: 
 ##### Edgar Rodolfo Braquetes López
