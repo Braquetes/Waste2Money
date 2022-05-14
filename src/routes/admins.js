@@ -38,25 +38,25 @@ router.delete('/:id', (req, res) => {
   });
 });
 
-// // // INSERT An User
-// router.post('/', (req, res) => {
-//   const {id, usuario, password, correo} = req.body;
-//   // id must be 0 to create new row
-//   const query = `
-//     SET @ID_USUARIO = ?;
-//     SET @USUARIO = ?;
-//     SET @CONTRASEÑA = ?;
-//     SET @CORREO = ?;
-//     CALL userAddOrEdit(@ID_USUARIO, @USUARIO, @CONTRASEÑA, @CORREO);
-//   `;
-//   mysqlConnection.query(query, [id, usuario, password, correo], (err, rows, fields) => {
-//     if(!err) {
-//       res.json({status: 'User Saved'});
-//     } else {
-//       console.log(err);
-//     }
-//   });
-// });
+//  INSERT An Admin
+router.post('/', (req, res) => {
+  const {id, nombre, telefono, id_usuario} = req.body;
+  // id must be 0 to create new row
+  const query = `
+    SET @ID_ADMIN = ?;
+    SET @NOMBRE = ?;
+    SET @TELEFONO = ?;
+    SET @ID_USUARIO = ?;
+    CALL adminAddOrEdit(@ID_ADMIN, @NOMBRE, @TELEFONO, @ID_USUARIO);
+  `;
+  mysqlConnection.query(query, [id, nombre, telefono, id_usuario], (err, rows, fields) => {
+    if(!err) {
+      res.json({status: 'New Admin Saved'});
+    } else {
+      console.log(err);
+    }
+  });
+});
 
 // // //  Update User
 // router.put('/:id', (req, res) => {
