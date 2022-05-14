@@ -8,6 +8,6 @@ Waste2Money
 
 [Ingrid Berenice Bautista](https://github.com/IngridBandgel)
 
-[Gabriel Gómez]()
+[Gabriel Gómez](https://github.com/gomez50057)
 
 [Juan Hernandez](https://github.com/grayTurtle01)
