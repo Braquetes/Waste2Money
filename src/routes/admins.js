@@ -3,7 +3,7 @@ const router = express.Router();
 
 const mysqlConnection  = require('../database.js');
 
-// GET all Admins
+//  GET all Admins
 router.get('/', (req, res) => {
   mysqlConnection.query('SELECT * FROM TB_ADMIN', (err, rows, fields) => {
     if(!err) {
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
   });  
 });
 
-//GET An Admin
+//  GET An Admin
 router.get('/:id', (req, res) => {
   const { id } = req.params; 
   mysqlConnection.query('SELECT * FROM TB_ADMIN WHERE ID_ADMIN = ?', [id], (err, rows, fields) => {
@@ -49,6 +49,7 @@ router.post('/', (req, res) => {
     SET @ID_USUARIO = ?;
     CALL adminAddOrEdit(@ID_ADMIN, @NOMBRE, @TELEFONO, @ID_USUARIO);
   `;
+
   mysqlConnection.query(query, [id, nombre, telefono, id_usuario], (err, rows, fields) => {
     if(!err) {
       res.json({status: 'New Admin Saved'});
@@ -59,7 +60,6 @@ router.post('/', (req, res) => {
 });
 
 //  Update Admin
-// This route is not working correctly !!!!
 router.put('/:id', (req, res) => {
   const {  nombre, telefono, id_usuario } = req.body;
   const { id } = req.params;
