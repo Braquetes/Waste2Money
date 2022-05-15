@@ -8,11 +8,11 @@ Este es el repositorio utilizado para el hackathon "HACK THE OCEAN". Contiene ta
 ## Visuales 👀
 
 - [🎬 Video](https://www.youtube.com/watch?v=T_od3nS6WAU)
-- [♪          Video de TikTok](./archivos/Publicidad)
-- [👨🏻 Buyer Persona](./archivos/Buyer-Persona.pdf)
-- [🎯 Pubico objetivo](./archivos/Pubico-objetivo.jpg)
-- [📓 Wireframe UI](./archivos/Wireframe-UI)
-- [☠️ Wireframe UX](./archivos/Wireframe-UX)
+- [♪          Video de TikTok]()
+- [👨🏻 Buyer Persona](./archivos/Buyer%20Persona.pdf)
+- [🎯 Pubico objetivo](./archivos/Pubico%20objetivo.jpg)
+- [📓 Wireframe UI](./archivos/Wireframe%20UI)
+- [☠️ Wireframe UX](./archivos/Wireframe%20UX)
 - [:bulb:  Publicidad](./archivos/Publicidad) 
 
 
