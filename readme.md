@@ -1,5 +1,5 @@
 # DÄZABI 🌊🐚
-![banner-waste2money](CloudTaxers_.png)
+![banner-waste2money](banner-repo.png)
 
 ## Descripción de repo 🚀✨
 
