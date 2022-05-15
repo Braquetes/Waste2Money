@@ -19,7 +19,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" >Mi perfil</a>
                 </li>
-                <a class="btn btn-salir"><i class="fas fa-sign-out-alt"></i></a>
+                <a class="btn btn-salir" (click)="salir()"><i class="fas fa-sign-out-alt"></i></a>
             </ul>
         </div>
     </div>
@@ -45,10 +45,10 @@
             </div>
             <div class="col-sm-9"  align="center">
                 <h1>Editar mi perfil</h1><br><br>
-                <form class="col-sm-6">
+                <form (ngSubmit)="update(form)" #form="ngForm" class="col-sm-6">
                     <div class="mb-3">
                         <label class="form-label">Nombre de Usuario</label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="usuario" [(ngModel)]="perfil.usuario" class="form-control">
                     </div>
                     <!-- <div class="mb-3">
                         <label class="form-label"></label>
@@ -63,13 +63,13 @@
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div> -->
                     <div class="mb-3">
-                        <label class="form-label"></label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" name="correo" [(ngModel)]="perfil.correo">
                     </div>
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
+                    </div> -->
                     <button type="submit" class="btn btn-primary">Actualizar información</button>
                 </form>
             </div>

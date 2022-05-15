@@ -47,12 +47,13 @@ emailPattern(){
     console.log(this.miFormulario.value);
     this.AS.login(this.miFormulario.value).subscribe((data: any) =>{
       console.log(data);
-      this.CS.set('access_token', 'token-prueba', 1, '/');
-      this.CS.set('idUser', data.ID_USUARIO, 1, '/');
-      this.CS.set('usuario', data.USUARIO, 1, '/');
-      this.CS.set('contraseña', data.CONTRASEÑA, 1, '/');
-      this.CS.set('correo', data.CORREO, 1, '/');
-      this.router.navigate(['/main']);
+      if(data.status != 'user not found'){
+        this.CS.set('access_token', 'token-prueba', 1, '/');
+        this.CS.set('idUser', data.ID_USUARIO, 1, '/');
+        this.CS.set('usuario', data.USUARIO, 1, '/');
+        this.CS.set('correo', data.CORREO, 1, '/');
+        this.router.navigate(['/main']);
+      }
     });
   }
 

@@ -11,7 +11,7 @@ import { AyudaComponent } from './client/ayuda/ayuda.component';
 import { PerfilComponent } from './client/perfil/perfil.component';
 import { HistorialComponent } from './client/historial/historial.component';
 import { CookieService } from 'ngx-cookie-service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -29,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

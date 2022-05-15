@@ -26,17 +26,17 @@
         <form autocomplete="off" [formGroup]="miFormulario">
             <div class="mb-3 row justify-content-md-center"  align="center">
                 <div class="col-12">
-                    <label  class="form-label fw-bold">Nombre:</label>
-                    <input type="text" class="form-control" formControlName="nombre" placeholder="Ingrese su nombre completo">
-                    <span *ngIf="campoValido('nombre')" class="form-text text-danger">
+                    <label  class="form-label fw-bold">Usuario:</label>
+                    <input type="text" class="form-control" formControlName="usuario" placeholder="Ingrese su nombre de usuario">
+                    <span *ngIf="campoValido('usuario')" class="form-text text-danger">
                       Campo obligatorio</span> 
                     <!-- <span class="form-text text-danger">Mínimo 4 letras</span>  -->
                 </div> 
             </div>
             <div class="mb-3 row justify-content-md-center"  align="center">
                 <div class="col-12">
-                    <label  class="form-label fw-bold">Email:</label>
-                    <input type="email" class="form-control" formControlName="email" placeholder="Ingrese su correo electronico" [pattern]="emailCheck">
+                    <label  class="form-label fw-bold">Correo:</label>
+                    <input type="email" class="form-control" formControlName="correo" placeholder="Ingrese su correo electronico" [pattern]="emailCheck">
                     <div>
                         <span *ngIf="emailReq()" class="form-text text-danger">
                             Dirección de correo no válida</span> 
@@ -47,16 +47,9 @@
             </div>
             <div class="mb-3 row justify-content-md-center"  align="center">
                 <div class="col-12">
-                    <label  class="form-label fw-bold">Usuario:</label>
-                    <input type="text" class="form-control" formControlName="usuario" placeholder="Ingrese su Usuario">
-                    <span class="form-text text-danger" *ngIf="campoValido('usuario')" >Campo obligatorio</span>
-                </div> 
-            </div>
-            <div class="mb-3 row justify-content-md-center"  align="center">
-                <div class="col-12">
                     <label  class="form-label fw-bold">Contraseña:</label>
-                    <input type="password" class="form-control" formControlName="password" placeholder="Ingrese su contraseña">
-                     <span class="form-text text-danger" *ngIf="campoValido('password')">Mínimo 8 caracteres</span>
+                    <input type="password" class="form-control" formControlName="contraseña" placeholder="Ingrese su contraseña">
+                     <span class="form-text text-danger" *ngIf="campoValido('contraseña')">Mínimo 8 caracteres</span>
                 </div> 
             </div>
             <div class="mb-3 row justify-content-md-center"  align="center">

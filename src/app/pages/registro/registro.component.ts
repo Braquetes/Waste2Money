@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-registro',
@@ -14,7 +15,7 @@ export class RegistroComponent implements OnInit {
 passReq(){
     return this.miFormulario.controls['confirmPassword']?.errors?.['required'] &&
            this.miFormulario.controls['confirmPassword']?.touched && 
-           this.miFormulario.controls['password']?.touched;
+           this.miFormulario.controls['contraseña']?.touched;
   }
 
 emailReq(){
@@ -28,7 +29,7 @@ emailPattern(){
 }
 
   matchPass(ctrl: FormControl){
-    const pass = ctrl.get('password')?.value;
+    const pass = ctrl.get('contraseña')?.value;
     const confirmPass = ctrl.get('confirmPassword')?.value;
     if(pass != confirmPass){
       ctrl.get('confirmPassword')?.setErrors({cpass: true});
@@ -36,23 +37,21 @@ emailPattern(){
   }
 
   miFormulario: FormGroup = this.fb.group({
-    nombre: ['', [Validators.required, Validators.required] ],
-    email: ['',[Validators.required]],
+    correo: ['',[Validators.required]],
     usuario: ['',[Validators.required,  Validators.minLength(6)]],
-    password: ['',[Validators.required, Validators.minLength(8)]],
+    contraseña: ['',[Validators.required, Validators.minLength(8)]],
     confirmPassword: ['',[Validators.required]]},{
     validators: this.matchPass
   });
 
-  constructor(private fb: FormBuilder, private CS: CookieService, private router: Router) { }
+  constructor(private fb: FormBuilder, private CS: CookieService, private router: Router, private AS: AuthService) { }
 
   ngOnInit(): void {
 
     this.miFormulario.setValue({
-      nombre: '',
-      email: '',
+      correo: '',
       usuario: '',
-      password: '',
+      contraseña: '',
       confirmPassword: ''
     });
   }
@@ -65,8 +64,12 @@ emailPattern(){
 
   save(){
     console.log(this.miFormulario.value);
-    this.CS.set('access_token', 'token-prueba', 1, '/');
-    this.router.navigate(['/main']);
+    this.AS.registro(this.miFormulario.value).subscribe((data: any) => {
+      console.log(data);
+      if(data.status == 'User Saved'){
+        this.router.navigate(['/login']);
+      }
+    });
   }
 
 }
