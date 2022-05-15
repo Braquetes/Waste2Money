@@ -19,9 +19,8 @@ export class CookiesGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const cookie = this.cookieService.check('access_token');
-    this.redirect(cookie);
-    return cookie;
+    const token = this.cookieService.check('access_token');
+    this.redirect(token);
+    return token;
   }
-
 }
