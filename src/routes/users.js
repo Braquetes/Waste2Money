@@ -39,24 +39,45 @@ router.delete('/:id', (req, res) => {
 });
 
 // // INSERT An User
+// router.post('/', (req, res) => {
+//   const {id, usuario, password, correo} = req.body;
+//   // id must be 0 to create new row
+//   const query = `
+//     SET @ID_USUARIO = ?;
+//     SET @USUARIO = ?;
+//     SET @CONTRASEÑA = ?;
+//     SET @CORREO = ?;
+//     CALL userAddOrEdit(@ID_USUARIO, @USUARIO, @CONTRASEÑA, @CORREO);
+//   `;
+//   mysqlConnection.query(query, [id, usuario, password, correo], (err, rows, fields) => {
+//     if(!err) {
+//       res.json({status: 'User Saved'});
+//     } else {
+//       console.log(err);
+//     }
+//   });
+// });
+
+
+// // INSERT An User II
 router.post('/', (req, res) => {
-  const {id, usuario, password, correo} = req.body;
+  const {usuario, contraseña, correo} = req.body;
   // id must be 0 to create new row
-  const query = `
-    SET @ID_USUARIO = ?;
-    SET @USUARIO = ?;
-    SET @CONTRASEÑA = ?;
-    SET @CORREO = ?;
-    CALL userAddOrEdit(@ID_USUARIO, @USUARIO, @CONTRASEÑA, @CORREO);
-  `;
-  mysqlConnection.query(query, [id, usuario, password, correo], (err, rows, fields) => {
+  const query = ` INSERT INTO TB_USER(USUARIO, CONTRASEÑA, CORREO ) VALUES 
+                  ('${usuario}',  '${contraseña}', '${correo}' )`;
+
+  mysqlConnection.query(query,(err, rows, fields) => {
     if(!err) {
       res.json({status: 'User Saved'});
     } else {
       console.log(err);
+      res.json({status: 'error on add user'})
     }
   });
+
+
 });
+
 
 // //  Update User
 router.put('/:id', (req, res) => {
