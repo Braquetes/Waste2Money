@@ -14,6 +14,22 @@ router.get('/', (req, res) => {
   });  
 });
 
+router.get('/:correo/:contraseña', (req, res) => {
+  var query = {
+    "parametro": {
+        "correo": req.params.correo,
+        "contraseña": req.params.contraseña
+    }
+}; 
+  mysqlConnection.query('SELECT * FROM TB_USER WHERE CORREO = ? AND CONTRASEÑA', [query.parametro.correo],[query.parametro.contraseña], (err, rows, fields) => {
+    if (!err) {
+      res.json(rows[0]);
+    } else {
+      console.log(err);
+    }
+  });
+});
+
 //GET An User
 router.get('/:id', (req, res) => {
   const { id } = req.params; 
