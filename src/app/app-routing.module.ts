@@ -27,14 +27,17 @@ const routes: Routes = [
     canActivate: [CookiesGuard]
   },{
     path: 'ayuda',
-    component: AyudaComponent
+    component: AyudaComponent,
+    canActivate: [CookiesGuard]
   },{
     path: 'historial',
-    component: HistorialComponent
+    component: HistorialComponent,
+    canActivate: [CookiesGuard]
   },
   {
     path: 'main',
-    component: MainComponent
+    component: MainComponent,
+    canActivate: [CookiesGuard]
   },
   {
     path: '',

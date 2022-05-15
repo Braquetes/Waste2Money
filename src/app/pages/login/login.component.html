@@ -17,43 +17,53 @@
    </div>
 </nav>
 
-<div class="card">
-   <div class="card-header text-center">
-      <h3 class="fw-bold">Iniciar sesión</h3>
-   </div>
-   <div class="card-body">
-      <form autocomplete="off" [formGroup]="miFormulario">
+<div class="container">
+   <div class="p-5" align="center">
+      <div class="card">
+      <div class="card-header text-center">
+         <h3 class="fw-bold">Iniciar sesión</h3>
+      </div>
+      <div class="card-body">
+         <form autocomplete="off" [formGroup]="miFormulario">
 
-         <div class="mb-3 row justify-content-md-center"  align="center">
-            <div class="col-12">
-               <label class="form-label fw-bold">Email:</label>
-               <input type="email" class="form-control" formControlName="email"
-                  placeholder="Ingrese su correo electronico" [pattern]="emailCheck">
-               <div>
-                  <span *ngIf="emailReq()" class="form-text text-danger">
-                     Dirección de correo no válida</span>
+            <div class="mb-3 row justify-content-md-center" align="center">
+               <div class="col-12">
+                  <label class="form-label fw-bold">Email:</label>
+                  <input type="email" class="form-control" formControlName="email"
+                     placeholder="Ingrese su correo electronico" [pattern]="emailCheck">
+                  <div>
+                     <span *ngIf="emailReq()" class="form-text text-danger">
+                        Dirección de correo no válida</span>
+                  </div>
+                  <span *ngIf="emailPattern()" class="form-text text-danger">
+                     Patrón incorrecto</span>
                </div>
-               <span *ngIf="emailPattern()" class="form-text text-danger">
-                  Patrón incorrecto</span>
             </div>
-         </div>
 
-         <div class="mb-3 row justify-content-md-center"  align="center">
-            <div class="col-12">
-               <label class="form-label fw-bold">Contraseña:</label>
-               <input type="password" class="form-control" formControlName="password"
-                  placeholder="Ingrese su contraseña">
-               <span class="form-text text-danger" *ngIf="campoValido('password')">Mínimo 8 caracteres</span>
+            <div class="mb-3 row justify-content-md-center" align="center">
+               <div class="col-12">
+                  <label class="form-label fw-bold">Contraseña:</label>
+                  <input type="password" class="form-control" formControlName="password"
+                     placeholder="Ingrese su contraseña">
+                  <span class="form-text text-danger" *ngIf="campoValido('password')">Mínimo 8 caracteres</span>
+               </div>
             </div>
-         </div>
 
-         <div class="mb-3 row text-center">
-            <div class="col">
-               <button type="submit" [disabled]="miFormulario.invalid" class="btn  btn-primary btn-lg" (click)="save()">
-                  Guardar
-               </button>
+            <div class="mb-3 row text-center">
+               <div class="col">
+                  <button type="submit" [disabled]="miFormulario.invalid" class="btn  btn-primary btn-lg"
+                     (click)="save()">
+                     Iniciar sesión
+                  </button>
+               </div>
             </div>
-         </div>
-      </form>
+            <div class="mb-3 row text-center">
+               <div class="col">
+                  Aún no tienes cuenta? <a [routerLink]="['/registro']">Click aquí</a>
+               </div>
+            </div>
+         </form>
+      </div>
    </div>
 </div>
+   </div>
