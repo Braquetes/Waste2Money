@@ -1,4 +1,6 @@
 const mysql = require('mysql');
+const dotenv = require('dotenv')
+dotenv.config({path: '../.env'})
 
 //~ const mysqlConnection = mysql.createConnection({
   //~ host: 'localhost',
@@ -7,6 +9,8 @@ const mysql = require('mysql');
   //~ database: 'WASTE2MONEYDB',
   //~ multipleStatements: true
 //~ });
+
+console.log(process.env.HOST)
 
 var mysqlConnection = mysql.createConnection({
   host: process.env.HOST, 
