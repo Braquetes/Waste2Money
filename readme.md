@@ -3,7 +3,7 @@
 
 ## Descripción de repo 🚀✨
 
-Este es el repositorio utilizado para el hackathon "HACK THE OCEAN". Contiene tanto el Front-end y back-end como las diversas implementaciones tecnologías ocupadas en las que se encuentran Angular, -, -, -, - , así como la instalación del ocupada para entrelazar en el sitio final. Si tiene alguna sugerencia no dude en hacérnoslo saber, saludos cordiales. ¡Gracias!
+Este es el repositorio utilizado para el hackathon "HACK THE OCEAN". Contiene tanto el Front-end y back-end como las diversas implementaciones tecnologías ocupadas en las que se encuentran Angular, -, -, -, - , así como la instalación ocupada para entrelazar en el sitio final. Si tiene alguna sugerencia no dude en hacérnoslo saber, saludos cordiales. ¡Gracias!
 
 ## Visuales 👀
 
