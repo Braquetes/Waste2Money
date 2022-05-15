@@ -1,46 +1,59 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-5 mx-auto">
-        <div id="first">
-            <div class="myform form ">
-                 <div class="logo mb-3">
-                     <div class="col-md-12 text-center">
-                        <h1>Inicia sesión</h1>
-                     </div>
-                </div>
-               <form action="" method="post" name="login">
-                       <div class="form-group">
-                          <label for="exampleInputEmail1">Correo electrónico</label>
-                          <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Escribe tu correo electrónico">
-                       </div>
-                       <div class="form-group">
-                          <label for="exampleInputEmail1">Contraseña</label>
-                          <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="*******">
-                       </div>
+<nav class="navbar navbar-expand-lg colorNav">
+   <div class="container-fluid">
+      <a class="navbar-brand title">DÄZABI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                       <div class="col-md-12 text-center ">
-                           <br>
-                          <button [routerLink]="['/main']" class=" btn btn-block mybtn btn-primary tx-tfm">Iniciar sesión</button>
-                       </div>
-                       <div class="col-md-12 ">
-                          <div class="login-or">
-                             <hr class="hr-or">
-                             <span class="span-or">o</span>
-                          </div>
-                       </div>
-                       <div class="col-md-12 mb-3">
-                          <p class="text-center">
-                             <a class="google btn mybtn">
-                                Registrarse usando Google 
-                             </a>
-                          </p>
-                       </div>
-                       <div class="form-group">
-                          <p class="text-center">No tienes cuenta? <a [routerLink]="['/registro']" id="signup">Registrate aquí</a></p>
-                       </div>
-                    </form>
-             
+            <li class="nav-item">
+               <a class="navText" [routerLink]="['/home']">Inicio</a>
+            </li>
+
+         </ul>
+      </div>
+   </div>
+</nav>
+
+<div class="card">
+   <div class="card-header text-center">
+      <h3 class="fw-bold">Iniciar sesión</h3>
+   </div>
+   <div class="card-body">
+      <form autocomplete="off" [formGroup]="miFormulario">
+
+         <div class="mb-3 row justify-content-md-center"  align="center">
+            <div class="col-12">
+               <label class="form-label fw-bold">Email:</label>
+               <input type="email" class="form-control" formControlName="email"
+                  placeholder="Ingrese su correo electronico" [pattern]="emailCheck">
+               <div>
+                  <span *ngIf="emailReq()" class="form-text text-danger">
+                     Dirección de correo no válida</span>
+               </div>
+               <span *ngIf="emailPattern()" class="form-text text-danger">
+                  Patrón incorrecto</span>
             </div>
-        </div>
-    </div>
-  </div>   
+         </div>
+
+         <div class="mb-3 row justify-content-md-center"  align="center">
+            <div class="col-12">
+               <label class="form-label fw-bold">Contraseña:</label>
+               <input type="password" class="form-control" formControlName="password"
+                  placeholder="Ingrese su contraseña">
+               <span class="form-text text-danger" *ngIf="campoValido('password')">Mínimo 8 caracteres</span>
+            </div>
+         </div>
+
+         <div class="mb-3 row text-center">
+            <div class="col">
+               <button type="submit" [disabled]="miFormulario.invalid" class="btn  btn-primary btn-lg" (click)="save()">
+                  Guardar
+               </button>
+            </div>
+         </div>
+      </form>
+   </div>
+</div>

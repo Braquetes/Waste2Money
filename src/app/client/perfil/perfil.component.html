@@ -1,27 +1,34 @@
-<!-- ======= Header ======= -->
-<header id="header" class="fixed-top heros">
-    <div class="container d-flex align-items-center">
-
-        <h1 class="logo me-auto"><a>DÄZABI</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-        <nav id="navbar" class="navbar order-last order-lg-0">
-            <ul>
-                <li><a [routerLink]="['/main']">Incio</a></li>
-                <li><a [routerLink]="['/ayuda']">Ayuda</a></li>
-                <li><a [routerLink]="['/historial']">Historial</a></li>
-                <li><a class="active">Mi perfil</a></li>
+<nav class="navbar navbar-expand-lg colorNav fix">
+    <div class="container-fluid">
+        <a class="navbar-brand title">DÄZABI</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/main']">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/ayuda']">Ayuda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/historial']">Historial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" >Mi perfil</a>
+                </li>
                 <a class="btn btn-salir"><i class="fas fa-sign-out-alt"></i></a>
             </ul>
-        </nav><!-- .navbar -->
-
+        </div>
     </div>
-</header><!-- End Header -->
+</nav>
+
 <div class="container-fluid pad" align="center">
     <div class="col-12">
         <div class="row">
-            <div class="col-3">
+            <div class="col-sm-3">
                 <h1>Mi perfil</h1>
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
@@ -36,9 +43,9 @@
                             class="fas fa-camera"></i></button>
                 </div>
             </div>
-            <div class="col-9">
+            <div class="col-sm-9"  align="center">
                 <h1>Editar mi perfil</h1><br><br>
-                <form class="col-6">
+                <form class="col-sm-6">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

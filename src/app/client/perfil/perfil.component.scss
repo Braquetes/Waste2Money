@@ -1,12 +1,20 @@
-.heros{
-    background-color: #37517e;
+.heros {
+  background-color: #37517e;
 }
 
+.title {
+  color: white;
+  font-size: xx-large;
+}
+
+a {
+  color: white;
+}
 .pad {
-    padding-top: 10vh;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    justify-items: center;
-    align-content: center;
+  padding-top: 5vh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
 }

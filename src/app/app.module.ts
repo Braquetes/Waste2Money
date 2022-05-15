@@ -10,6 +10,8 @@ import { MainComponent } from './client/main/main.component';
 import { AyudaComponent } from './client/ayuda/ayuda.component';
 import { PerfilComponent } from './client/perfil/perfil.component';
 import { HistorialComponent } from './client/historial/historial.component';
+import { CookieService } from 'ngx-cookie-service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,10 @@ import { HistorialComponent } from './client/historial/historial.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
