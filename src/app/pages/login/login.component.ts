@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,42 +12,28 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 export class LoginComponent implements OnInit {
   emailCheck= '^[a-z0-9._*+-]+@[a-z0-9.-]+\\.[a-z]{2,5}$';
 
-passReq(){
-    return this.miFormulario.controls['confirmPassword']?.errors?.['required'] &&
-           this.miFormulario.controls['confirmPassword']?.touched && 
-           this.miFormulario.controls['password']?.touched;
-  }
-
 emailReq(){
-  return this.miFormulario.controls['email']?.errors?.['required'] &&
-         this.miFormulario.controls['email']?.touched;
+  return this.miFormulario.controls['correo']?.errors?.['required'] &&
+         this.miFormulario.controls['correo']?.touched;
 }
 
 emailPattern(){
-  return this.miFormulario.controls['email']?.errors?.['pattern'] &&
-         this.miFormulario.controls['email']?.touched;
+  return this.miFormulario.controls['correo']?.errors?.['pattern'] &&
+         this.miFormulario.controls['correo']?.touched;
 }
 
-  matchPass(ctrl: FormControl){
-    const pass = ctrl.get('password')?.value;
-    const confirmPass = ctrl.get('confirmPassword')?.value;
-    if(pass != confirmPass){
-      ctrl.get('confirmPassword')?.setErrors({cpass: true});
-    }
-  }
-
   miFormulario: FormGroup = this.fb.group({
-    email: ['',[Validators.required]],
-    password: ['',[Validators.required, Validators.minLength(8)]]
+    correo: ['',[Validators.required]],
+    contraseña: ['',[Validators.required, Validators.minLength(8)]]
   });
 
-  constructor(private fb: FormBuilder, private CS: CookieService, private router: Router) { }
+  constructor(private fb: FormBuilder, private CS: CookieService, private router: Router, private AS: AuthService) { }
 
   ngOnInit(): void {
 
     this.miFormulario.setValue({
-      email: '',
-      password: '',
+      correo: '',
+      contraseña: '',
     });
   }
 
@@ -58,8 +45,15 @@ emailPattern(){
 
   save(){
     console.log(this.miFormulario.value);
-    this.CS.set('access_token', 'token-prueba', 1, '/');
-    this.router.navigate(['/main']);
+    this.AS.login(this.miFormulario.value).subscribe((data: any) =>{
+      console.log(data);
+      this.CS.set('access_token', 'token-prueba', 1, '/');
+      this.CS.set('idUser', data.ID_USUARIO, 1, '/');
+      this.CS.set('usuario', data.USUARIO, 1, '/');
+      this.CS.set('contraseña', data.CONTRASEÑA, 1, '/');
+      this.CS.set('correo', data.CORREO, 1, '/');
+      this.router.navigate(['/main']);
+    });
   }
 
 }
