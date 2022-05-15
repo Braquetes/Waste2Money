@@ -23,7 +23,11 @@ router.post("/", (req,res) => {
  
   mysqlConnection.query(query, (err, rows, fields) => {
             if (!err) {
-              res.json(rows[0]);
+              if(!(res.json(rows[0]) == {})){
+                res.json(rows[0]);  
+              }else{                
+                res.send({status: "User not found"})
+              }
             } else {
               console.log(err);
               res.json({status: "query error"})
