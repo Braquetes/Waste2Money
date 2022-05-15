@@ -62,7 +62,13 @@ router.delete('/:id', (req, res) => {
 // // INSERT An User II
 router.post('/', (req, res) => {
   const {usuario, contraseña, correo} = req.body;
-  // id must be 0 to create new row
+  
+  // verificar disponibilidad de correo
+  let q = `SELECT * FROM TB_USER WHERE CORREO='${correo}'`
+
+
+
+
   const query = ` INSERT INTO TB_USER(USUARIO, CONTRASEÑA, CORREO ) VALUES 
                   ('${usuario}',  '${contraseña}', '${correo}' )`;
 
