@@ -17,7 +17,7 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 
   // Request headers you wish to allow
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, content-type');
 
   // Set to true if you need the website to include cookies in the requests sent
   // to the API (e.g. in case you use sessions)
@@ -42,6 +42,8 @@ app.use("/clients", require('./routes/clients'));
 app.use("/scores", require('./routes/scores'));
 
 app.use("/login", require("./routes/login"))
+
+app.use("/checks", require("./routes/checks"))
 
 
 
