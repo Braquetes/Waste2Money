@@ -1,13 +1,14 @@
-# DÄZABI
+# DÄZABI 🌊🐚
 ![banner-waste2money](CloudTaxers_.png)
 
-## Descripción de repo
+## Descripción de repo 🚀✨
 
 Este es el repositorio utilizado para el hackathon "HACK THE OCEAN". Contiene tanto el Front-end y back-end como las diversas implementaciones tecnologías ocupadas en las que se encuentran Angular, -, -, -, - , así como la instalación del ocupada para entrelazar en el sitio final. Si tiene alguna sugerencia no dude en hacérnoslo saber, saludos cordiales. ¡Gracias!
 
-## visuales 
-- [🎬Video](https://www.youtube.com/watch?v=T_od3nS6WAU)
-- [♪ Video de TikTok]()
+## Visuales 👀
+
+- [🎬 Video](https://www.youtube.com/watch?v=T_od3nS6WAU)
+- [♪          Video de TikTok]()
 - [👨🏻 Buyer Persona]()
 - [🎯 Pubico objetivo]()
 - [📓 Wireframe UI]()
