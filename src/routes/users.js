@@ -13,22 +13,23 @@ router.get('/', (req, res) => {
     }
   });  
 });
+//POST EMAIL AND PASS
+router.post("/", (req,res) => {
 
-router.get('/:correo/:contraseña', (req, res) => {
-  var query = {
-    "parametro": {
-        "correo": req.params.correo,
-        "contraseña": req.params.contraseña
-    }
-}; 
-  mysqlConnection.query('SELECT * FROM TB_USER WHERE CORREO = ? AND CONTRASEÑA', [query.parametro.correo],[query.parametro.contraseña], (err, rows, fields) => {
-    if (!err) {
-      res.json(rows[0]);
-    } else {
-      console.log(err);
-    }
+  let correo =  req.body.correo
+  let contraseña = req.body.contraseña 
+
+  query = `SELECT * FROM TB_USER WHERE CORREO = '${correo}' AND CONTRASEÑA = '${contraseña}'`
+ 
+  mysqlConnection.query(query, (err, rows, fields) => {
+            if (!err) {
+              res.json(rows[0]);
+            } else {
+              console.log(err);
+              res.json({status: "query error"})
+            }
   });
-});
+})
 
 //GET An User
 router.get('/:id', (req, res) => {
