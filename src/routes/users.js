@@ -56,7 +56,7 @@ router.delete('/:id', (req, res) => {
 });
 
 // // INSERT An User
-router.post('/', (req, res) => {
+router.post('/create', (req, res) => {
   const {id, usuario, password, correo} = req.body;
   // id must be 0 to create new row
   const query = `
