@@ -10,6 +10,9 @@
   - [Tablas](#tablas)
   - [Query](#query)
   - [Diagrama Entidad Relación](#diagrama-entidad-relación)
+- [Despliegue](#despliegue)
+  - [Despliegue de la base de datos con azure](#despliegue-de-la-base-de-datos-con-azure)
+  - [Despliegue de la api node.js (express)](#despliegue-de-la-api-nodejs-express)
 
 # Instalación
 ## Instalar módulo node
@@ -30,7 +33,7 @@ Normalmente el comando anterior instalara todos los módulos incluyendo MySql pe
 
 ## Instalar módulo nodemon
 
-Este módulo no es necesario pero si quieres hacerle cambio al código podría serte muy útil para no tener que reiniciar la aplicación cada vez que haces algún cambio, para poderlo instalar podrías usar cualquiera de los siguientes comandos.
+Este módulo no es necesario pero si quieres hacerle cambios al código podría serte muy útil para no tener que reiniciar la aplicación cada que hagas una modificación, para poderlo instalar podrías usar cualquiera de los siguientes comandos.
 
 1. Instalación global (no recomendado)
 
@@ -116,6 +119,16 @@ CONSTRAINT fk_Administrador_User FOREIGN KEY (ID_USUARIO) REFERENCES TB_USER(ID_
 );
 ```
 ## Diagrama Entidad Relación
+
 Decidimos realizar una base de datos relacional debido a el tipo de proyecto que estamos manejando, se nos hizo mas practico tener tablas que se relacionen entre si para poder llevar un conteo de la puntuación de nuestros usuarios, así mismo creando un administrador.
 
 ![Diagrama](./img/DiagramaER.png)
+
+# Despliegue
+## Despliegue de la base de datos con azure
+
+Para poder utilizar la base de datos dentro de la nube utilizamos azure, lo cual nos pareció la manera mas optima de realizarlo, para mysql usamos la version 8.0 con un plan de 1G en azure, el link de la base de datos es el siguiente: [dazabiproyect.mysql.database.azure.com](dazabiproyect.mysql.database.azure.com)
+
+## Despliegue de la api node.js (express)
+
+Para poder conectar la base de datos con el front-end nos inclinamos por utilizar node.js con el framework express de esta manera poder manejar el proyecto como api y hacer las peticiones directamente a la base de datos en la nube, esta aplicación la subimos igualmente a la nube para poder hacer que las conexiones no dependieran del uso local, en este caso usamos el apartado App Service, el link a la api es el siguiente: [http://dazabi.azurewebsites.net/users](http://dazabi.azurewebsites.net/users)
