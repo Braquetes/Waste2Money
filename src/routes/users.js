@@ -81,20 +81,22 @@ router.post('/', (req, res) => {
 
 // //  Update User
 router.put('/:id', (req, res) => {
-  const { usuario, password, correo } = req.body;
+  const { usuario, contraseña, correo } = req.body;
   const { id } = req.params;
-  const query = `
-    SET @ID_USUARIO = ?;
-    SET @USUARIO = ?;
-    SET @CONTRASEÑA = ?;
-    SET @CORREO= ?;
-    CALL userAddOrEdit(@ID_USUARIO, @USUARIO, @CONTRASEÑA, @CORREO);
-  `;
-  mysqlConnection.query(query, [id, usuario, password, correo], (err, rows, fields) => {
+  const query = ` UPDATE TB_USER 
+                  SET USUARIO='${usuario}', 
+                      CONTRASEÑA='${contraseña}', 
+                      CORREO='${correo}'
+                  WHERE ID_USUARIO=${id}
+                      `;
+
+                    
+  mysqlConnection.query(query, (err, rows, fields) => {
     if(!err) {
       res.json({status: 'User Updated'});
     } else {
       console.log(err);
+      res.json({status: "Error unpdating user"})
     }
   });
 });
