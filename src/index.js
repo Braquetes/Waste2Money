@@ -19,6 +19,8 @@ app.use("/admins", require('./routes/admins'));
 app.use("/clients", require('./routes/clients'));
 app.use("/scores", require('./routes/scores'));
 
+app.use("/login", require("./routes/login"))
+
 
 
 // Starting the server
