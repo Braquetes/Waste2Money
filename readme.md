@@ -8,12 +8,12 @@ Este es el repositorio utilizado para el hackathon "HACK THE OCEAN". Contiene ta
 ## Visuales 👀
 
 - [🎬 Video](https://www.youtube.com/watch?v=T_od3nS6WAU)
-- [♪          Video de TikTok]()
-- [👨🏻 Buyer Persona]()
-- [🎯 Pubico objetivo]()
-- [📓 Wireframe UI]()
-- [☠️ Wireframe UX]()
-- [:bulb:  Publicidad]()
+- [♪          Video de TikTok](./archivos/Publicidad)
+- [👨🏻 Buyer Persona](./archivos/Buyer-Persona.pdf)
+- [🎯 Pubico objetivo](./archivos/Pubico-objetivo.jpg)
+- [📓 Wireframe UI](./archivos/Wireframe-UI)
+- [☠️ Wireframe UX](./archivos/Wireframe-UX)
+- [:bulb:  Publicidad](./archivos/Publicidad)
 
 
 ## Instalación ⚙️
@@ -30,3 +30,5 @@ Aqui va documentacion de Front y back
 [Gabriel Gómez](https://github.com/gomez50057) (Representante)
 
 [Juan Hernandez](https://github.com/grayTurtle01)
+
+![collage.png](./archivos/collage.png)
