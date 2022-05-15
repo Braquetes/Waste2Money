@@ -9,9 +9,9 @@ app.use(express.json());
 
 
 // Routes
-app.use("/", (req, res)=> {
-    res.end("Welcome to DAZABI")
-});
+//~ app.use("/", (req, res)=> {
+    //~ res.end("Welcome to DAZABI")
+//~ });
 
 app.use("/users", require('./routes/users'));
 app.use("/admins", require('./routes/admins'));
