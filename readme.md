@@ -3,7 +3,7 @@
 
 ## Descripción de repo 🚀✨
 
-Este es el repositorio utilizado para el hackathon "HACK THE OCEAN". Contiene tanto el Front-end y back-end como las diversas implementaciones tecnologías ocupadas en las que se encuentran Angular, -, -, -, - , así como la instalación ocupada para entrelazar en el sitio final. Si tiene alguna sugerencia no dude en hacérnoslo saber, saludos cordiales. ¡Gracias!
+Este es el repositorio utilizado para el hackathon "HACK THE OCEAN". Contiene tanto el Front-end y Back-end como las diversas implementaciones tecnologícas ocupadas en las que se encuentran Angular, Bootstrap, Node.js(express), Azure: Web Static Page, App Service, MySQL-Azure, agrree, Canva, Balsamiq wireframes y Miro así como la instalación ocupada para entrelazar en el sitio final. Si tiene alguna sugerencia no dude en hacérnoslo saber, saludos cordiales. ¡Gracias!
 
 ## Visuales 👀
 
@@ -17,18 +17,17 @@ Este es el repositorio utilizado para el hackathon "HACK THE OCEAN". Contiene ta
 
 
 ## Instalación ⚙️
-
-Aqui va documentacion de Front y back 
+#### [Documentación Backend](https://github.com/Braquetes/Waste2Money/tree/backend#readme)  
 
 ## Autores 💪🏻
-[Edgar Rodolfo Braquetes López](https://github.com/Braquetes)
+- [Edgar Rodolfo Braquetes López](https://github.com/Braquetes)
 
-[Luis Angel Barajas](https://github.com/BarajasAngel)
+- [Luis Angel Barajas](https://github.com/BarajasAngel)
 
-[Ingrid Berenice Bautista](https://github.com/IngridBandgel)
+- [Ingrid Berenice Bautista](https://github.com/IngridBandgel)
 
-[Gabriel Gómez](https://github.com/gomez50057) (Representante)
+- [Gabriel Gómez](https://github.com/gomez50057) (Representante)
 
-[Juan Hernandez](https://github.com/grayTurtle01)
+- [Juan Hernandez](https://github.com/grayTurtle01)
 
 ![collage.png](./archivos/collage.png)
