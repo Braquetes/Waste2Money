@@ -63,33 +63,18 @@ router.delete('/:id', (req, res) => {
 router.post('/', (req, res) => {
   const {usuario, contraseña, correo} = req.body;
   
-  // verificar disponibilidad de correo
-  let q = `SELECT * FROM TB_USER WHERE CORREO='${correo}'`
+  
+  const query = ` INSERT INTO TB_USER(USUARIO, CONTRASEÑA, CORREO ) VALUES 
+                  ('${usuario}',  '${contraseña}', '${correo}' )`;
 
-  mysqlConnection.query( q, (err, rows, fields) => {
-    if(!err){
-        if( rows.length > 0 ){
-          res.json({status: "that mail already exists"})
-        }
-        else{
-          res.json({status: "Valid mail"})
-        }
-
+  mysqlConnection.query(query,(err, rows, fields) => {
+    if(!err) {
+      res.json({status: 'User Saved'});
+    } else {
+      console.log(err);
+      res.json({status: 'error on add user'})
     }
-  })
-
-
-  // const query = ` INSERT INTO TB_USER(USUARIO, CONTRASEÑA, CORREO ) VALUES 
-  //                 ('${usuario}',  '${contraseña}', '${correo}' )`;
-
-  // mysqlConnection.query(query,(err, rows, fields) => {
-  //   if(!err) {
-  //     res.json({status: 'User Saved'});
-  //   } else {
-  //     console.log(err);
-  //     res.json({status: 'error on add user'})
-  //   }
-  // });
+  });
 
 
 });
