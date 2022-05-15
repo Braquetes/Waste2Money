@@ -13,6 +13,8 @@ Este es el repositorio utilizado para el hackathon "HACK THE OCEAN". Contiene ta
 - [🎯 Pubico objetivo]()
 - [📓 Wireframe UI]()
 - [☠️ Wireframe UX]()
+- [:bulb:  Publicidad]()
+
 
 ## Instalación ⚙️
 
