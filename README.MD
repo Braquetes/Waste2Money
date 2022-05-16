@@ -131,4 +131,4 @@ Para poder utilizar la base de datos dentro de la nube utilizamos azure, lo cual
 
 ## Despliegue de la api node.js (express)
 
-Para poder conectar la base de datos con el front-end nos inclinamos por utilizar node.js con el framework express de esta manera poder manejar el proyecto como api y hacer las peticiones directamente a la base de datos en la nube, esta aplicación la subimos igualmente a la nube para poder hacer que las conexiones no dependieran del uso local, en este caso usamos el apartado App Service, el link a la api es el siguiente: [http://dazabi-api.azurewebsites.net/users](http://dazabi.azurewebsites.net/users)
+Para poder conectar la base de datos con el front-end nos inclinamos por utilizar node.js con el framework express de esta manera poder manejar el proyecto como api y hacer las peticiones directamente a la base de datos en la nube, esta aplicación la subimos igualmente a la nube para poder hacer que las conexiones no dependieran del uso local, en este caso usamos el apartado App Service, el link a la api es el siguiente: [http://dazabi-api.azurewebsites.net/users](http://dazabi-api.azurewebsites.net/users)
