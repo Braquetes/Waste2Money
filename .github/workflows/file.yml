@@ -3,7 +3,7 @@ name: Build on Node.js app to Azure Web App - dazabi
 on:
   push:
     branches:
-      - master
+      - backend
   workflow_dispatch:
 
 jobs:
