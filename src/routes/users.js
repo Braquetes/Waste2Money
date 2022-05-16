@@ -13,6 +13,27 @@ router.get('/', (req, res) => {
     }
   });  
 });
+//POST EMAIL AND PASS
+router.post("/", (req,res) => {
+
+  let correo =  req.body.correo
+  let contraseña = req.body.contraseña 
+
+  query = `SELECT * FROM TB_USER WHERE CORREO = '${correo}' AND CONTRASEÑA = '${contraseña}'`
+ 
+  mysqlConnection.query(query, (err, rows, fields) => {
+            if (!err) {
+              if(!(res.json(rows[0]) == {})){
+                res.json(rows[0]);  
+              }else{                
+                res.send({status: "User not found"})
+              }
+            } else {
+              console.log(err);
+              res.json({status: "query error"})
+            }
+  });
+})
 
 //GET An User
 router.get('/:id', (req, res) => {
@@ -38,7 +59,7 @@ router.delete('/:id', (req, res) => {
   });
 });
 
-// // INSERT An User
+// // INSERT An User I
 // router.post('/', (req, res) => {
 //   const {id, usuario, password, correo} = req.body;
 //   // id must be 0 to create new row
@@ -67,7 +88,7 @@ router.post('/', (req, res) => {
   const query = ` INSERT INTO TB_USER(USUARIO, CONTRASEÑA, CORREO ) VALUES 
                   ('${usuario}',  '${contraseña}', '${correo}' )`;
 
-  mysqlConnection.query(query,(err, rows, fields) => {
+  mysqlConnection.query(query,(err, rows, fields) =>
     if(!err) {
       res.json({status: 'User Saved'});
     } else {
@@ -75,8 +96,6 @@ router.post('/', (req, res) => {
       res.json({status: 'error on add user'})
     }
   });
-
-
 });
 
 
