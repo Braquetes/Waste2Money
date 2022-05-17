@@ -134,8 +134,16 @@ Para poder utilizar la base de datos dentro de la nube utilizamos azure, lo cual
 Para poder conectar la base de datos con el front-end nos inclinamos por utilizar node.js con el framework express de esta manera poder manejar el proyecto como api y hacer las peticiones directamente a la base de datos en la nube, esta aplicación la subimos igualmente a la nube para poder hacer que las conexiones no dependieran del uso local, en este caso usamos el apartado App Service, el link a la api es el siguiente: [http://dazabi.azurewebsites.net/users](http://dazabi.azurewebsites.net/users)
 
 
+# api-dazabi
+Dazabi API
+
 ## API Documentation
 ### 1. /users
+
+id|usuario|correo|contraseña
+-|-|-|-
+1|bob|bo@mail.com|123
+2|alice|al@gmail.com|123456
 
 ``` 
 GET /users -->  [{...},{...}, ..., {...}]
@@ -164,3 +172,4 @@ PUT /users
           contraseña: "new_password"}     --> {status: 'user updated'}
 ```
 
+Check the live Demo ➡️ [Live Demo](http://dazabi.azurewebsites.net/demo)
