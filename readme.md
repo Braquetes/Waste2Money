@@ -21,6 +21,12 @@ Este es el repositorio utilizado para el hackathon "HACK THE OCEAN". Contiene ta
 ## Instalación ⚙️
 #### [Documentación Backend](https://github.com/Braquetes/Waste2Money/tree/backend#readme)  
 
+
+## Architecture
+![architecture](https://user-images.githubusercontent.com/42740473/169152375-b6a85f40-b3c6-4329-befd-77b6d89f6c05.png)
+
+
+
 ## Autores 💪🏻
 - [Edgar Rodolfo Braquetes López](https://github.com/Braquetes)
 
