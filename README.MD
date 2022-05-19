@@ -151,12 +151,12 @@ GET /users -->  [{...},{...}, ..., {...}]
 
 ``` 
 GET /users/:id  --> {...}
-                    {status: 'user not found'}
+                 or {status: 'user not found'}
 ```
 
 ``` 
 DELETE /users/:id  --> {status: 'user deleted'}
-                       {status: 'user not found'} 
+                    or {status: 'user not found'} 
 ```
 
 ``` 
@@ -164,6 +164,7 @@ POST /users
   body = {usuario: "bob",
           correo: "bob@gmail.com"
           contraseña: "123456"}     --> {status: 'user added'}
+                                     or {status: 'that e-mail already exists' }  
 ```
 ``` 
 PUT /users 
