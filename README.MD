@@ -131,11 +131,8 @@ Para poder utilizar la base de datos dentro de la nube utilizamos azure, lo cual
 
 ## Despliegue de la api node.js (express)
 
-Para poder conectar la base de datos con el front-end nos inclinamos por utilizar node.js con el framework express de esta manera poder manejar el proyecto como api y hacer las peticiones directamente a la base de datos en la nube, esta aplicación la subimos igualmente a la nube para poder hacer que las conexiones no dependieran del uso local, en este caso usamos el apartado App Service, el link a la api es el siguiente: [http://dazabi.azurewebsites.net/users](http://dazabi.azurewebsites.net/users)
+Para poder conectar la base de datos con el front-end nos inclinamos por utilizar node.js con el framework express de esta manera poder manejar el proyecto como api y hacer las peticiones directamente a la base de datos en la nube, esta aplicación la subimos igualmente a la nube para poder hacer que las conexiones no dependieran del uso local, en este caso usamos el apartado App Service, el link a la api es el siguiente: [http://dazabi.azurewebsites.net/demo](http://dazabi.azurewebsites.net/demo)
 
-
-# api-dazabi
-Dazabi API
 
 ## API Documentation
 ### 1. /users
@@ -164,13 +161,51 @@ POST /users
   body = {usuario: "bob",
           correo: "bob@gmail.com"
           contraseña: "123456"}     --> {status: 'user added'}
-                                     or {status: 'that e-mail already exists' }  
+                                     or {status: 'that e-mail alredy exists'}
 ```
 ``` 
-PUT /users 
+PUT /users/:id 
   body = {usuario: "new_user_name",
           correo: "new_mail@gmail.com"
           contraseña: "new_password"}     --> {status: 'user updated'}
+                                           or {status: 'user not found'}  
+```
+Check the live Demo ➡️ [Live Demo](http://dazabi.azurewebsites.net/demo)
+
+
+
+### 2. /admins
+
+id|nombre|telefono|usuaario_id
+-|-|-|-
+1|bob|5512345678|1
+2|alice|563456789|2
+
+``` 
+GET /admins -->  [{...},{...}, ..., {...}]
 ```
 
-Check the live Demo ➡️ [Live Demo](http://dazabi.azurewebsites.net/demo)
+``` 
+GET /admins/:id  --> {...}
+                  or {status: 'admin not found'}
+```
+
+``` 
+DELETE /admins/:id  --> {status: 'admin deleted'}
+                     or {status: 'admin not found'} 
+```
+
+``` 
+POST /admins 
+  body = {nombre: "bob",
+          telefono: 1234567890
+          usuarios_id: 1}       --> {status: 'admin added'}
+                                 or {status: 'invalid user_id'}
+```
+``` 
+PUT /admins/:id
+  body = {nombre: "new_user_name",
+          telefono: "0987654321"
+          usuario_id: ""}     --> {status: 'admin updated'}
+                               or {status: 'admin not found'}
+```
