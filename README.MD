@@ -161,14 +161,15 @@ POST /users
   body = {usuario: "bob",
           correo: "bob@gmail.com"
           contraseña: "123456"}     --> {status: 'user added'}
-                                     or {status: 'that e-mail alredy exists'}
+                                     or {status: 'that e-mail already exists'}
 ```
 ``` 
 PUT /users/:id 
   body = {usuario: "new_user_name",
           correo: "new_mail@gmail.com"
           contraseña: "new_password"}     --> {status: 'user updated'}
-                                           or {status: 'user not found'}  
+                                           or {status: 'user not found'}
+                                           or {status: 'that e-mail already exists'}
 ```
 Check the live Demo ➡️ [Live Demo](http://dazabi.azurewebsites.net/demo)
 
