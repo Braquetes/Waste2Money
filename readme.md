@@ -10,7 +10,7 @@ Este es el repositorio utilizado para el hackathon "HACK THE OCEAN". Contiene ta
 ## Visuales 👀
 
 - [🎬 Video](https://www.youtube.com/watch?v=T_od3nS6WAU)
-- [♪          Video de TikTok](https://vm.tiktok.com/ZMLcwL6YD/?k=1)
+- [ ♪  Video de TikTok](https://vm.tiktok.com/ZMLcwL6YD/?k=1)
 - [👨🏻 Buyer Persona](./archivos/Buyer%20Persona.pdf)
 - [🎯 Pubico objetivo](./archivos/Pubico%20objetivo.jpg)
 - [📓 Wireframe UI](./archivos/Wireframe%20UI)
