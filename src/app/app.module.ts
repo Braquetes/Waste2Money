@@ -13,6 +13,7 @@ import { HistorialComponent } from './client/historial/historial.component';
 import { CookieService } from 'ngx-cookie-service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     FormsModule
   ],
-  providers: [CookieService],
+  providers: [CookieService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

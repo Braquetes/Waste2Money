@@ -64,12 +64,13 @@ emailPattern(){
 
   save(){
     console.log(this.miFormulario.value);
-    this.AS.registro(this.miFormulario.value).subscribe((data: any) => {
-      console.log(data);
-      if(data.status == 'User Saved'){
-        this.router.navigate(['/login']);
-      }
-    });
+    alert("no disponible");
+    // this.AS.registro(this.miFormulario.value).subscribe((data: any) => {
+    //   console.log(data);
+    //   if(data.status == 'User Saved'){
+    //     this.router.navigate(['/login']);
+    //   }
+    // });
   }
 
 }
